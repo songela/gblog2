@@ -12,6 +12,6 @@ github_username:  songela
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:title
-paginate_path: "{{ site.baseurl }}/blog/page:num/"
+paginate_path: "/blog/page:num/"
 titlecase: true
 paginate: 5
