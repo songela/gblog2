@@ -1,0 +1,62 @@
+---
+layout: page
+title:  Blog
+---
+
+<div class="home">
+
+  <ul class="post-list">
+
+    <!-- This loops through the paginated posts -->
+    {% for post in paginator.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.categories %} • {% for cat in post.categories %}
+        {% assign words = cat | split: ' ' %}{% for word in words %}
+          {{ word | capitalize }}{%endfor%}{%endfor%}{%endif%}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
+        {% assign splitted = post.content | split: '</p>' %}
+        {% assign firstly = splitted[0] | strip_html %}
+        {% if splitted[0] contains "img" or splitted[0] contains "iframe" %}{{splitted[0]}}{{splitted[1]}}
+        {% elsif firstly == post.title %}{{ splitted[1] }}
+        {% else %}{{ splitted[0] }}{%endif%}
+      </li>
+    {% endfor %}
+
+    <!-- Pagination links -->
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1">
+        {% if paginator.previous_page %}
+          <a class="btn btn-default btn-block" href="{{ paginator.previous_page_path }}" role="button">Previous</a>
+        {% else %}
+          <a class="btn btn-default btn-block disabled" href="#" role="button" width="200">Previous</a>
+        {% endif %}
+      </div>
+
+      <div class="col-md-4 dropdown">
+        <button class="btn btn-default btn-block dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Page: {{ paginator.page }} of {{ paginator.total_pages }}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <li><a href="{{ site.baseurl }}/blog/">Page 1</a></li>
+          {% for i in (2..paginator.total_pages) %}
+          <li><a href="{{ site.baseurl }}/blog/page{{ i }}/">Page {{ i }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+      {% if paginator.next_page %}
+        <a class="btn btn-default btn-block" href="{{ paginator.next_page_path }}" role="button">Next</a>
+      {% else %}
+        <a class="btn btn-default btn-block disabled" href="#" role="button" style="width:200">Next</a>
+      {% endif %}
+      </div>
+    </div>
+  </ul>
+
+</div>

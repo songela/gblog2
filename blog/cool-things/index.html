@@ -1,0 +1,27 @@
+---
+layout: page
+title: Cool Things
+---
+
+<div class="home">
+
+  <ul class="post-list">
+    {% for category in site.categories %}
+      {% if category[0] == "some cool things" or category[0] == "cool things" %}
+        {% for post in category[1] %} 
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            
+            {% assign splitted = post.content | split: '</p>' %}
+            {% assign firstly = splitted[0] | strip_html %}
+            {% if splitted[0] contains "img" or splitted[0] contains "iframe" %}{{splitted[0]}}{{splitted[1]}}
+            {% elsif firstly == post.title %}{{ splitted[1] }}
+            {% else %}{{ splitted[0] }}{%endif%}
+          </li> 
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+</div>

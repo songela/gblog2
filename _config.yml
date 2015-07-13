@@ -1,0 +1,17 @@
+# Site settings
+title: Girls Got Talent
+email: contact@girlsgottalent.org
+description: > # this means to ignore newlines until "baseurl:"
+  Amazing stories, cool things, and everyday science - 
+  fun for everyone, especially the girls!   Team Science is recruiting!
+baseurl: "/project-name" # the subpath of your site, e.g. /blog/
+url: "http://www.girlsgottalent.org" # the base hostname & protocol for your site
+twitter_username: girlstalentpgh
+github_username:  songela
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:title
+paginate_path: "/blog/page:num/"
+titlecase: true
+paginate: 5

@@ -1,0 +1,35 @@
+---
+layout: page
+title: New Archive
+date: 2015-01-29 18:32:00.000000000 -05:00
+categories: []
+tags: []
+status: draft
+type: page
+published: false
+meta:
+  _edit_last: '1'
+  _wp_page_template: default
+  wip_template: full
+  wip_sidebar: side_sidebar_area
+  wip_seo_title: ''
+  wip_seo_description: ''
+  wip_seo_keywords: ''
+author:
+  login: songelachen@gmail.com
+  email: songelachen@gmail.com
+  display_name: Songe
+  first_name: Songe
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<h2>Recent Posts</h2>
+<ul>
+<?php get_archives('postbypost', '10'); ?></p>
+<p><?php $recent_posts = wp_get_recent_posts();<br />
+	foreach( $recent_posts as $recent ){<br />
+		echo '<l?><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'  ';<br />
+	}<br />
+?>
+</ul>

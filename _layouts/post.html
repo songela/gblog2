@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}
+    	{% if page.categories %} • {% for cat in page.categories %}
+    		{% assign words = cat | split: ' ' %}{% for word in words %}
+    			{{ word | capitalize }}{%endfor%}{%endfor%}{%endif%}</p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div>

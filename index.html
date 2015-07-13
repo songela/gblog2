@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Latest Posts</h1>
+
+  <ul class="post-list">
+
+    <!-- This loops through the paginated posts -->
+    {% for post in site.posts limit:5 %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}{% if post.categories %} • {% for cat in post.categories %}
+        {% assign words = cat | split: ' ' %}{% for word in words %}
+          {{ word | capitalize }}{%endfor%}{%endfor%}{%endif%}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+
+        {% assign splitted = post.content | split: '</p>' %}
+        {% assign firstly = splitted[0] | strip_html %}
+        <p>{% if splitted[0] contains "img" or splitted[0] contains "iframe" %}{{splitted[0]}}{{splitted[1]}}
+        {% elsif firstly == post.title %}{{ splitted[1] }}
+        {% else %}{{ splitted[0] }}{%endif%}</p>
+      </li>
+    {% endfor %}
+    
+  </ul>
+
+</div>
