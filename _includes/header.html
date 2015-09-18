@@ -5,39 +5,43 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/" style="font-family:lora; text-shadow: 2px 2px 8px #e052be;">{{ site.title }}</a>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" 
+         data-target="#example-navbar-collapse">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="site-title" href="{{ site.baseurl }}/" style="font-family:lora; text-shadow: 2px 2px 8px #e052be;">{{ site.title }}</a>
+    </div>
 
-    <nav class="nav navbar-nav navbar-right site-nav">
-      <div class="container-fluid">
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right site-nav">
-            <li class="dropdown">
-              <a id="dropdownMenu1" class="dropdown-toggle page-link" data-toggle="dropdown" data-target="#" href="#/" aria-haspopup="true" aria-expanded="false" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">Blog<span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu1">
-                <li><a href="{{ site.baseurl }}/blog/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">All Posts</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="{{ site.baseurl }}/blog/everyday/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Everyday Science</a></li>
-                <li><a href="{{ site.baseurl }}/blog/cool-things/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Cool Things</a></li>
-                <li><a href="{{ site.baseurl }}/blog/stories/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Amazing Stories</a></li>
-              </ul>
-            </li>
-
-            <li class="dropdown">
-              <a id="dm3" class="dropdown-toggle page-link" data-toggle="dropdown" data-target="#" href="#/" aria-haspopup="true" aria-expanded="false" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">Links<span class="caret"></span></a>
-              <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dm3">
-                <li><a href="{{ site.baseurl }}/links/resources/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Scientific Resources</a></li>
-                <li><a href="{{ site.baseurl }}/links/opportunities/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Exciting Opportunities</a></li>
-                <li><a href="{{ site.baseurl }}/links/profiles/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Girls in Science Profiles</a></li>
-              </ul>
-            </li>
-
-            <li class="active"><a class="page-link" href="{{ site.baseurl }}/about/" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">About</a></li>
-
+    <div class="navbar-collapse collapse" id="example-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right site-nav">
+        <li class="dropdown">
+          <a id="dropdownMenu1" class="dropdown-toggle page-link" data-toggle="dropdown" data-target="#" href="#/" aria-haspopup="true" aria-expanded="false" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">Blog<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenu1">
+            <li><a href="{{ site.baseurl }}/blog/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">All Posts</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="{{ site.baseurl }}/blog/everyday/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Everyday Science</a></li>
+            <li><a href="{{ site.baseurl }}/blog/cool-things/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Cool Things</a></li>
+            <li><a href="{{ site.baseurl }}/blog/stories/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Amazing Stories</a></li>
           </ul>
-        </div>
+        </li>
 
-      </div>
-    </nav>
+        <li class="dropdown">
+          <a id="dm3" class="dropdown-toggle page-link" data-toggle="dropdown" data-target="#" href="#/" aria-haspopup="true" aria-expanded="false" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">Links<span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="dm3">
+            <li><a href="{{ site.baseurl }}/links/resources/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Scientific Resources</a></li>
+            <li><a href="{{ site.baseurl }}/links/opportunities/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Exciting Opportunities</a></li>
+            <li><a href="{{ site.baseurl }}/links/profiles/" style="font-family:lora;font-size:120%;text-shadow: 2px 2px 8px #e052be;">Girls in Science Profiles</a></li>
+          </ul>
+        </li>
+
+        <li class="active"><a class="page-link" href="{{ site.baseurl }}/about/" style="font-family:lora; font-size:120%; text-shadow: 2px 2px 8px #e052be;">About</a></li>
+
+      </ul>
+    </div>
 
   </div>
 
