@@ -21,6 +21,7 @@ title:  Blog
         {% assign splitted = post.content | split: '</p>' %}
         {% assign firstly = splitted[0] | strip_html %}
         {% if splitted[0] contains "img" or splitted[0] contains "iframe" %}{{splitted[0]}}{{splitted[1]}}
+          {% if splitted[1] contains "Source" %}{{splitted[2]}}{% endif %}
         {% elsif firstly == post.title %}{{ splitted[1] }}
         {% else %}{{ splitted[0] }}{%endif%}
       </li>
@@ -30,7 +31,7 @@ title:  Blog
     <div class="row">
       <div class="col-md-3 col-md-offset-1">
         {% if paginator.previous_page %}
-          <a class="btn btn-default btn-block" href="{{ paginator.previous_page_path }}" role="button">Previous</a>
+          <a class="btn btn-default btn-block" href="{{ site.baseurl }}{{ paginator.previous_page_path }}" role="button">Previous</a>
         {% else %}
           <a class="btn btn-default btn-block disabled" href="#" role="button" width="200">Previous</a>
         {% endif %}
@@ -51,7 +52,7 @@ title:  Blog
 
       <div class="col-md-3">
       {% if paginator.next_page %}
-        <a class="btn btn-default btn-block" href="{{ paginator.next_page_path }}" role="button">Next</a>
+        <a class="btn btn-default btn-block" href="{{ site.baseurl }}{{ paginator.next_page_path }}" role="button">Next</a>
       {% else %}
         <a class="btn btn-default btn-block disabled" href="#" role="button" style="width:200">Next</a>
       {% endif %}
