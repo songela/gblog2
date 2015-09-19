@@ -52,7 +52,7 @@ title:  Blog
 
       <div class="col-md-3">
       {% if paginator.next_page %}
-        <a class="btn btn-default btn-block" href="{{ site.baseurl }}{{ paginator.next_page_path }}" role="button">Next</a>
+        <a class="btn btn-default btn-block" href="{{ paginator.next_page_path | prepend: site.baseurl }}" role="button">Next</a>
       {% else %}
         <a class="btn btn-default btn-block disabled" href="#" role="button" style="width:200">Next</a>
       {% endif %}
