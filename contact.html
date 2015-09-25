@@ -1,0 +1,45 @@
+---
+layout: page
+title: Contact
+<!-- permalink: /contact/ -->
+---
+<!-- <form action="http://formspree.io/contact@girlsgottalent.org" method="POST">
+	<div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" id="name" placeholder="Marie Curie" />
+	</div>
+	<div class="form-group">
+		<label for="email">Email address</label>
+		<input type="email" class="form-control" id="email" name="_replyto" placeholder="curie@girlsgottalent.org" />
+	</div>
+	<div>
+		<label for="comment">Comment</label>
+		<textarea class="form-control" rows="5" id="comment" placeholder="What would you like to tell us?"></textarea>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+
+			<input type="hidden" name="_subject" value="Girls Got Talent" />
+			<input type="hidden" name="_next" value="{{ site.baseurl }}/contact-successful/" />
+	        <button type="submit" class="btn btn-default" style="width:100%;" value="Send">Submit</button>
+      	</div>
+		
+	</div>
+</form> -->
+
+<form action="https://getsimpleform.com/messages?form_api_token=12fc761c49b4d365068952fa4690df27" method="post">
+	<!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+	<input type='hidden' name='redirect_to' value='{{ site.baseurl }}/contact-successful/' />
+	<!-- all your input fields here.... -->
+	<label for="name">Name</label>
+	<input type="text" class="form-control" id="name" placeholder="Marie Curie" />
+
+	<label for="email">Email address</label>
+	<input type="email" class="form-control" id="email" name="_replyto" placeholder="curie@girlsgottalent.org" />
+
+	<label for="comment">Comment</label>
+	<textarea class="form-control" rows="5" id="comment" placeholder="What would you like to tell us?"></textarea>
+
+	<input type='submit' value='Test form' />
+</form>
