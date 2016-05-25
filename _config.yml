@@ -9,7 +9,9 @@ description: > # this means to ignore newlines until "baseurl:"
 twitter_username: girlstalentpgh
 github_username:  songela
 
+gems: ['jekyll', 'jekyll-paginate', 'jekyll-categories', 'github-pages']
 # Build settings
+port: 3000
 markdown: kramdown
 permalink: /:year/:month/:title
 paginate_path: "/blog/page:num/"
